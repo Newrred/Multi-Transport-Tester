@@ -1,6 +1,7 @@
 ﻿import json
 import os
 import queue
+import sys
 import time
 import tkinter as tk
 from tkinter import filedialog, ttk
@@ -18,9 +19,26 @@ LOG_MAX_LINES = 5000
 UI_EVENT_Q_MAX = 20000
 UI_POLL_MS = 50
 UI_POLL_BATCH = 300
-
+ICON_FILE_NAME = "app.ico"
 
 class App(tk.Tk):
+    def _resolve_resource_path(self, filename: str) -> str:
+        if getattr(sys, "frozen", False):
+            base = getattr(sys, "_MEIPASS", os.path.dirname(sys.executable))
+        else:
+            base = os.path.dirname(__file__)
+        return os.path.join(base, filename)
+
+    def _apply_window_icon(self):
+        icon_path = self._resolve_resource_path(ICON_FILE_NAME)
+        if not os.path.exists(icon_path):
+            return
+        try:
+            self.iconbitmap(icon_path)
+        except Exception:
+            # If setting a .ico fails on some environments, continue without breaking startup.
+            pass
+
     def apply_theme_colors(self, preset: str):
         palettes = {
             "dark": {
@@ -121,6 +139,7 @@ class App(tk.Tk):
 
     def __init__(self):
         super().__init__()
+        self._apply_window_icon()
         self.title("MultiTransportTester (TCP/UDP/Redis/Serial)")
         self.geometry("1180x760")
 
@@ -1159,8 +1178,3 @@ class App(tk.Tk):
 
 if __name__ == "__main__":
     App().mainloop()
-
-
-
-
-

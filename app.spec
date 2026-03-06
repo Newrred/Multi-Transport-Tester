@@ -1,4 +1,4 @@
-# -*- mode: python ; coding: utf-8 -*-
+﻿# -*- mode: python ; coding: utf-8 -*-
 
 
 a = Analysis(
@@ -32,6 +32,7 @@ exe = EXE(
     target_arch=None,
     codesign_identity=None,
     entitlements_file=None,
+    icon="app.ico",
 )
 coll = COLLECT(
     exe,
@@ -42,3 +43,4 @@ coll = COLLECT(
     upx_exclude=[],
     name='MultiTransportTester',
 )
+
