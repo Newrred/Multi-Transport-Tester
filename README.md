@@ -1,9 +1,12 @@
 ﻿# Multi-Transport-Tester
 
+
 **Multi-Transport-Tester** is a desktop app for **quickly testing TCP, UDP, Redis, and Serial communication from a single UI**.
 It is built with Tkinter and provides connection controls, send/receive testing, framing options, periodic sending, and log search/navigation.
 
+
 ## Features
+
 
 - Multi-transport support: `TCP`, `UDP`, `Redis Pub/Sub`, `Serial`
 - Shared message framing:
@@ -20,7 +23,9 @@ It is built with Tkinter and provides connection controls, send/receive testing,
 - Settings save/load (`settings.json`)
 - Windows one-file executable build (PyInstaller)
 
+
 ## Requirements
+
 
 - Python 3.12
 - Tkinter (GUI)
@@ -33,7 +38,9 @@ python-osc>=1.8,<2.0
 
 - PyInstaller (for packaging)
 
+
 ## Project Structure
+
 
 ```text
 MultiTransportTester/
@@ -53,7 +60,9 @@ MultiTransportTester/
 └─ settings.json                  # Runtime user settings (gitignored by default)
 ```
 
+
 ## Getting Started (Development)
+
 
 PowerShell:
 
@@ -64,7 +73,9 @@ python -m venv venv
 .\venv\Scripts\python app.py
 ```
 
+
 ## Quick UI Guide
+
 
 ### 1) Top Bar
 
@@ -92,7 +103,9 @@ python -m venv venv
   - `sendTimer_1`, `sendTimer_2`, `sendTimer_3`, `heartbeat`
   - Set interval, payload, HEX mode, and send immediately
 
+
 ## Keyboard Shortcuts
+
 
 - `Ctrl + F`: focus log search box
 - `Enter` (in search): next result
@@ -103,7 +116,9 @@ python -m venv venv
 - `Ctrl + Shift + S`: save log to file
 - `Ctrl + Shift + C`: copy selected log (or all log text)
 
+
 ## Build (Windows EXE)
+
 
 ### One-file Build (Recommended)
 
@@ -122,7 +137,9 @@ Result:
 .\venv\Scripts\python -m PyInstaller MultiTransportTester.spec --noconfirm
 ```
 
+
 ## Configuration File (`settings.json`)
+
 
 UI state is saved during runtime and restored on next launch.
 
@@ -133,7 +150,9 @@ UI state is saved during runtime and restored on next launch.
 
 The file is created in the project root.
 
+
 ## Troubleshooting
+
 
 - Redis `connect failed`
   - Check whether Redis is running and verify host/port/db/password.
@@ -141,6 +160,8 @@ The file is created in the project root.
 - Serial `open failed`
   - Check COM port name, access permission, and device connection state.
 
+
 ## License
+
 
 This project is licensed under the **MIT License**. See [`LICENSE`](LICENSE) for details.

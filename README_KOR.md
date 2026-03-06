@@ -1,9 +1,12 @@
 ﻿# Multi-Transport-Tester
 
+
 **TCP / UDP / Redis / Serial** 통신을 한 UI에서 빠르게 점검하기 위한 데스크톱 테스트 앱입니다.  
 Tkinter 기반 경량 도구로, 연결/송수신/프레이밍/주기 송신/로그 검색까지 한 번에 확인할 수 있습니다.
 
+
 ## Features
+
 
 - 멀티 트랜스포트 지원: `TCP`, `UDP`, `Redis Pub/Sub`, `Serial`
 - 공통 메시지 프레이밍:
@@ -20,7 +23,9 @@ Tkinter 기반 경량 도구로, 연결/송수신/프레이밍/주기 송신/로
 - 설정 저장/복원 (`settings.json`)
 - Windows 단일 실행 파일 빌드(PyInstaller)
 
+
 ## Requirements
+
 
 - Python 3.12
 - Tkinter (GUI)
@@ -32,7 +37,9 @@ Tkinter 기반 경량 도구로, 연결/송수신/프레이밍/주기 송신/로
 ```
 - PyInstaller (배포 빌드)
 
+
 ## Project Structure
+
 
 ```text
 MultiTransportTester/
@@ -52,7 +59,9 @@ MultiTransportTester/
 └─ settings.json                  # 실행 중 생성되는 사용자 설정(기본 gitignore)
 ```
 
+
 ## Getting Started (Development)
+
 
 PowerShell 기준:
 
@@ -63,7 +72,9 @@ python -m venv venv
 .\venv\Scripts\python app.py
 ```
 
+
 ## Quick UI Guide
+
 
 ### 1) Top Bar
 
@@ -91,7 +102,9 @@ python -m venv venv
   - `sendTimer_1`, `sendTimer_2`, `sendTimer_3`, `heartbeat`
   - interval, payload, HEX 여부 설정 + 즉시 전송 버튼
 
+
 ## Keyboard Shortcuts
+
 
 - `Ctrl + F`: 로그 검색 입력 포커스
 - `Enter` (검색창): 다음 검색 결과
@@ -102,7 +115,9 @@ python -m venv venv
 - `Ctrl + Shift + S`: 로그 파일 저장
 - `Ctrl + Shift + C`: 로그 복사
 
+
 ## Build (Windows EXE)
+
 
 ### One-file Build (Recommended)
 
@@ -121,7 +136,9 @@ Result:
 .\venv\Scripts\python -m PyInstaller MultiTransportTester.spec --noconfirm
 ```
 
+
 ## Configuration File (`settings.json`)
+
 
 앱 실행 중 UI 상태가 저장되며, 다음 실행 시 자동 복원됩니다.
 
@@ -142,6 +159,8 @@ Result:
 - Serial `open failed`
   - 포트명(COMx), 권한, 장치 연결 상태 확인
 
+
 ## License
+
 
 This project is licensed under the **MIT License**. See [`LICENSE`](LICENSE) for details.
